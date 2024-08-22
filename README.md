@@ -46,16 +46,8 @@ Formulário utilizado para adicionar e editar carros. Valida as entradas e exibe
 ### CarsList
 Lista os carros cadastrados, permitindo a exclusão e edição dos mesmos.
 
-## Screenshots
-![Página inicial Page](..\public\img\Home.JPG)
-![Sobre Page](pucrs-projeto1\public\img\About.JPG)
-![Lista de Carros Page](pucrs-projeto1\public\img\Cars.JPG)
-![Adicionar Carro Page](pucrs-projeto1\public\img\AddCars.JPG)
-![Editar Carro Page](pucrs-projeto1/public/img/EditCars-Confirm.JPG)
-![Excluir Carro Page](pucrs-projeto1/public/img/DeleteCars-Confirm.JPG)
 
 ## Componentes
-
 Os componentes estão no diretório `./src/Components` e eles possuem as seguintes características:
 - ChildrenComponent:
   - `props`
@@ -69,6 +61,14 @@ Os componentes estão no diretório `./src/Components` e eles possuem as seguint
 - Navbar:
   - Descrição: este componente utiliza Link do React Router para mostrar as páginas disponíveis em uma barra de navegação
 
+## Screenshots
+![Página inicial Page](.\public\img\Home.JPG)
+![Sobre Page](.\public\img\About.JPG)
+![Lista de Carros Page](.\public\img\Cars.JPG)
+![Adicionar Carro Page](.\public\img\AddCars.JPG)
+![Editar Carro Page](./public/img/EditCars-Confirm.JPG)
+![Excluir Carro Page](./public/img/DeleteCars-Confirm.JPG)
+
 ## Conclusão
 
-Este projeto é apenas para fins demonstrativos e não contém mais alterações do que as necessárias para demostrar algumas funcionalidades úteis para o desenvolvimento de projetos em ReactJS.
+
