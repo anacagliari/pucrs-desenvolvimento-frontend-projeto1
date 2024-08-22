@@ -1,0 +1,39 @@
+.modalBackground {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+.card {
+    width: 100%;
+    max-width: 800px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.title {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.inputRow {
+    margin-top: 20px;
+    padding: 20px;
+}
+
+.buttonRow {
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.input {
+    margin-left: 5px;
+}

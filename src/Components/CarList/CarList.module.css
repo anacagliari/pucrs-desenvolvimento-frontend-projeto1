@@ -1,0 +1,21 @@
+.backgroundBox {
+    background-color: white;
+    margin: 10px;
+    padding: 50px;
+    border-radius: 10px;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+}
+
+.cardTitle {
+    font-size: 24px;
+    padding-left: 10px;
+}
+
+.addButtonContainer {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 15px;
+}

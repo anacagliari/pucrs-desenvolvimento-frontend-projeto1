@@ -1,70 +1,74 @@
-# Getting Started with Create React App
+[...]deve ter uma breve explicação sobre como executar o projeto e uma descrição do que cada componente realiza. Você também pode utilizar este arquivo para documentar suas decisões no desenvolvimento do projeto.[...]
+`Critérios de Avaliação:` Documentação de referência: 0.5
+O projeto está acompanhado de documentação (README.md) clara e objetiva (explica todos os passos para rodar a aplicação desde o npm install), bem estruturada e com escrita adequada (seguindo o template fornecido, contendo a identificação do aluno e uma descrição do que cada componente realiza e apresentando prints de como a aplicação ficou).
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Nome: `Ana Caroline Cagliari Cappellari`
 
-## Available Scripts
+Descrição do Projeto: Breve introdução sobre o que o projeto faz.
+Como Executar o Projeto: Instruções para clonar o repositório, instalar dependências, e rodar o projeto.
+Descrição dos Componentes: Explicação breve sobre o que cada componente faz.
+Imagens/Screenshots: Prints das telas do projeto funcionando.
 
-In the project directory, you can run:
+## Como Executar
+1. Entre pasta pucrs-projeto1 no terminal:
+```
+cd exemplos/pucrs-projeto1
+```
 
-### `npm start`
+2. Navegue até o diretório do projeto.
+```
+cd pucrs-projeto1
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+3. Rode npm install para instalar as dependências do projeto:
+```
+npm i --save @fortawesome/react-fontawesome@latest
+npm i --save @fortawesome/free-solid-svg-icons
+npm install bootstrap
+```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+4. E em seguida, npm start, para iniciar a execução do projeto.
+```
+npm start
+```
 
-### `npm test`
+## Introdução
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Este projeto contém uma estrutura básica a partir do template CRA, sem muitas alterações, com o objetivo de demostrar como compartilhar o estado de uma aplicação utilizando React Router e React Context API.
 
-### `npm run build`
+## Componentes
+### Navbar
+Contém os links de navegação para diferentes seções da aplicação.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### CarForm
+Formulário utilizado para adicionar e editar carros. Valida as entradas e exibe feedback para o usuário.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### CarsList
+Lista os carros cadastrados, permitindo a exclusão e edição dos mesmos.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Screenshots
+![Página inicial Page](..\public\img\Home.JPG)
+![Sobre Page](pucrs-projeto1\public\img\About.JPG)
+![Lista de Carros Page](pucrs-projeto1\public\img\Cars.JPG)
+![Adicionar Carro Page](pucrs-projeto1\public\img\AddCars.JPG)
+![Editar Carro Page](pucrs-projeto1/public/img/EditCars-Confirm.JPG)
+![Excluir Carro Page](pucrs-projeto1/public/img/DeleteCars-Confirm.JPG)
 
-### `npm run eject`
+## Componentes
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Os componentes estão no diretório `./src/Components` e eles possuem as seguintes características:
+- ChildrenComponent:
+  - `props`
+    - items: um array com uma lista de dados para ser mostrado;
+    - onAdd: callback que é chamado quando o botão "Adicionar algo" é clicado;
+  - Descrição: este componente é uma simples demostração de como utilizar callback para adicionar itens em um array e como listar este array.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- List:
+  - Descrição: este componente renderiza o ChildrenComponent a partir dos dados presentes no contexto e também é responsável por disparar as mudanças no contexto.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- Navbar:
+  - Descrição: este componente utiliza Link do React Router para mostrar as páginas disponíveis em uma barra de navegação
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Conclusão
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Este projeto é apenas para fins demonstrativos e não contém mais alterações do que as necessárias para demostrar algumas funcionalidades úteis para o desenvolvimento de projetos em ReactJS.
