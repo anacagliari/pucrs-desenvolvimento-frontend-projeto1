@@ -33,19 +33,6 @@ npm start
 ```
 
 ## Componentes
-Descrição dos Componentes: Explicação breve sobre o que cada componente faz.
-
-### Navbar
-Contém os links de navegação para diferentes seções da aplicação.
-
-### CarForm
-Formulário utilizado para adicionar e editar carros. Valida as entradas e exibe feedback para o usuário.
-
-### CarsList
-Lista os carros cadastrados, permitindo a exclusão e edição dos mesmos.
-
-
-## Componentes
 Os componentes estão no diretório `./src/Components`
 - Home:
   - Componente com conteúdo sobre o link correspondente ao "Início".
@@ -78,9 +65,9 @@ Lista inicial de carros.
 
 ## Screenshots
 
-![Página inicial Page](.\public\img\Home.JPG)
-![Sobre Page](.\public\img\About.JPG)
-![Lista de Carros Page](.\public\img\Cars.JPG)
-![Adicionar Carro Page](.\public\img\AddCars.JPG)
+![Página inicial Page](./public/img/Home.JPG)
+![Sobre Page](./public/img/About.JPG)
+![Lista de Carros Page](./public/img/Cars.JPG)
+![Adicionar Carro Page](./public/img/AddCars.JPG)
 ![Editar Carro Page](./public/img/EditCars-Confirm.JPG)
 ![Excluir Carro Page](./public/img/DeleteCars-Confirm.JPG)
