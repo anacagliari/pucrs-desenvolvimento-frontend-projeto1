@@ -1,9 +1,11 @@
 import { faCheck, faXmark } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useState } from 'react';
+import { createCar, updateCar, fetchCars } from '../../services/carService';
+
 import styles from './CarForm.module.css';
 
-export default function CarForm({ index, setIndex, aCar, setACar, carsList, setCarsList, showModalAddCar, onClose, isAdd, showMessage }) {
+export default function CarForm({ showModalAddCar, aCar, setACar, onClose, isAdd, showMessage, carsList, setData }) {
     const [error, setError] = useState('');
 
     if (!showModalAddCar) {
@@ -11,11 +13,11 @@ export default function CarForm({ index, setIndex, aCar, setACar, carsList, setC
     }
 
     function validateForm() {
-        if (!aCar.nome || !aCar.marca || !aCar.cor || !aCar.ano) {
+        if (!aCar.name || !aCar.brand || !aCar.color || !aCar.year) {
             setError("Todos os campos devem ser preenchidos.");
             return false;
         }
-        if (aCar.nome.length < 2 || aCar.marca.length < 2 || aCar.cor.length < 2) {
+        if (aCar.name.length < 2 || aCar.brand.length < 2 || aCar.color.length < 2) {
             setError("Nome, Marca e Cor devem ter pelo menos 2 caracteres.");
             return false;
         }
@@ -23,26 +25,33 @@ export default function CarForm({ index, setIndex, aCar, setACar, carsList, setC
         return true;
     }
 
-    function addCar() {
+    async function addCar() {
         if (!validateForm()) return;
-
-        const newCar = { id: index, nome: aCar.nome, marca: aCar.marca, cor: aCar.cor, ano: aCar.ano };
-        setCarsList([...carsList, newCar]);
-        showMessage("Carro adicionado com sucesso!");
-        setACar('');
-        setIndex(index + 1);
-        onClose();
-    }
-
-    function updateCar() {
-        if (!validateForm()) return;
-
-        if (window.confirm("Tem certeza que deseja editar este carro?")) {
-            const listUpdated = carsList.map(car => car.id === aCar.id ? aCar : car );
-            setCarsList(listUpdated);
-            showMessage("Carro editado com sucesso!");
+        try {
+            await createCar(aCar)
+            const data = await fetchCars();
+            setData(data);
+            showMessage("Carro adicionado com sucesso!");
             setACar('');
             onClose();
+        } catch (error) {
+            console.error('Erro ao adicionar carro:', error);
+        }
+    }
+
+    async function updateACar() {
+        if (!validateForm()) return;
+        if (window.confirm("Tem certeza que deseja editar este carro?")) {
+            try {
+                await updateCar(aCar);
+                const listUpdated = carsList.map(car => car.id === aCar.id ? aCar : car);
+                setData(listUpdated);
+                showMessage("Carro editado com sucesso!");
+                setACar('');
+                onClose();
+            } catch (error) {
+                console.error('Erro ao editar carro:', error);
+            }
         }
     }
 
@@ -58,44 +67,44 @@ export default function CarForm({ index, setIndex, aCar, setACar, carsList, setC
                             <input type="text"
                                 placeholder="Ex: Corolla"
                                 className={`${styles.input}`}
-                                value={aCar.nome}
-                                onChange={(e) => setACar({ ...aCar, nome: e.target.value })} />
+                                value={aCar.name}
+                                onChange={(e) => setACar({ ...aCar, name: e.target.value })} />
                         </div>
                         <div className="col-md-3">
                             <label>Marca: </label>
                             <input type="text"
                                 placeholder="Ex: Toyota"
                                 className={`${styles.input}`}
-                                value={aCar.marca}
-                                onChange={(e) => setACar({ ...aCar, marca: e.target.value })} />
+                                value={aCar.brand}
+                                onChange={(e) => setACar({ ...aCar, brand: e.target.value })} />
                         </div>
                         <div className="col-md-3">
                             <label>Cor: </label>
                             <input type="text"
                                 placeholder="Ex: Preto"
                                 className={`${styles.input}`}
-                                value={aCar.cor}
-                                onChange={(e) => setACar({ ...aCar, cor: e.target.value })} />
+                                value={aCar.color}
+                                onChange={(e) => setACar({ ...aCar, color: e.target.value })} />
                         </div>
                         <div className="col-md-3">
                             <label>Ano: </label>
                             <input type="number"
                                 placeholder="Ex: 1992"
                                 className={`${styles.input}`}
-                                value={aCar.ano}
-                                onChange={(e) => setACar({ ...aCar, ano: parseInt(e.target.value) })} />
+                                value={aCar.year}
+                                onChange={(e) => setACar({ ...aCar, year: parseInt(e.target.value) })} />
                         </div>
                         <div className={`d-flex justify-content-end ${styles.buttonRow}`}>
                             <button title={isAdd ? "Adicionar Carro" : "Editar Carro"}
-                                onClick={isAdd ? addCar : updateCar}
+                                onClick={isAdd ? addCar : updateACar}
                                 type="button"
-                                class="btn btn-sm btn-light">
+                                className="btn btn-sm btn-light">
                                 <FontAwesomeIcon icon={faCheck} />
                             </button>
                             <button title="Cancelar"
                                 onClick={() => onClose()}
                                 type="button"
-                                class="btn btn-sm btn-secondary ms-2">
+                                className="btn btn-sm btn-secondary ms-2">
                                 <FontAwesomeIcon icon={faXmark} />
                             </button>
                         </div>

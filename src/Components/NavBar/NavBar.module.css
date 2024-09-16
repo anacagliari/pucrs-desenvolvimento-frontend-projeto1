@@ -2,10 +2,19 @@
     background-color: #333;
     margin: 10px;
     padding: 10px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
     border-radius: 10px;
+}
+
+.navContainer ul {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 30px;
+}
+
+.navContainer li {
+    display: inline;
 }
 
 .navContainer a {
